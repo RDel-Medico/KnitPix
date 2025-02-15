@@ -1,0 +1,41 @@
+# Ignore Gradle files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iml
+
+# Ignore Eclipse project files
+.project
+.classpath
+
+# Java
+*.class
+*.log
+
+# Gradle specific
+.gradle/
+build/
+*.jar
+*.war
+*.ear
+*.db
+*.sql
+*.sqlite
+out/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# JetBrains Rider
+.idea/
+
+# Kotlin
+*.kotlin_module
+
+# IntelliJ IDEA
+*.iws
+*.iml
