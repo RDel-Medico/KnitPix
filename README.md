@@ -1,6 +1,12 @@
 # 🧶KnitPix
 KnitPix is an open-source Java application that converts images into knitting patterns. Whether you need a black-and-white contour version or a colorized pattern using your available wool colors, this tool aims to simplify the process for knitters to make custom pattern.
 
+## 🎨Example
+Below is an example created using a combination of tools, including color quantization with a custom palette and a blocky blur effect. This demonstrates the goal of KnitPix: to convert an image into a knitting chart based on the available wool colors.
+
+In this example, the image is simplified using a palette of five colors.
+![alt text](https://github.com/RDel-Medico/KnitPix/blob/main/tiger.png?raw=true)
+
 ## 🌟Why This Project Exists
 This project started as a tool for my mother to convert images into knit patterns. However, I decided to take this opportunity to:
 - Learn how to manage an open-source project.
