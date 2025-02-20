@@ -3,6 +3,9 @@ package knitpix.core;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL;
 
+/*
+ * This class is responsible for creating and managing the window.
+ */
 public class Window {
     private long window;
 
@@ -21,18 +24,30 @@ public class Window {
         GLFW.glfwSwapInterval(1);
     }
 
+    /*
+     * Returns true if the window should close.
+     */
     public boolean shouldClose() {
         return GLFW.glfwWindowShouldClose(window);
     }
 
+    /*
+     * Swaps the front and back buffers.
+     */
     public void swapBuffers() {
         GLFW.glfwSwapBuffers(window);
     }
 
+    /*
+     * Polls for events.
+     */
     public void pollEvents() {
         GLFW.glfwPollEvents();
     }
 
+    /*
+     * Destroys the window and terminates GLFW.
+     */
     public void destroy() {
         GLFW.glfwDestroyWindow(window);
         GLFW.glfwTerminate();
