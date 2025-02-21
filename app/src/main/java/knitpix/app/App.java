@@ -2,7 +2,6 @@ package knitpix.app;
 
 import knitpix.core.Window;
 import knitpix.core.inputManagers.InputHandler;
-import knitpix.core.inputManagers.InputManager;
 import knitpix.gui.GuiRenderer;
 
 /*
@@ -43,8 +42,7 @@ public class App {
     public static void init() {
         window = new Window(800, 600, "KnitPix");
         guiRenderer = new GuiRenderer(window);
-        inputHandler = new InputHandler(guiRenderer);
-        InputManager.init(window.getWindowHandle());
+        inputHandler = new InputHandler(guiRenderer, window.getWindowHandle());
     }
 
     /*

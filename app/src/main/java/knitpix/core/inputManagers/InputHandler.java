@@ -7,27 +7,23 @@ import knitpix.gui.GuiRenderer;
  */
 public class InputHandler {
     private final GuiRenderer guiRenderer;
-    private final MouseInput mouseManager = InputManager.getMouseManager();
-    private final KeyboardInput keyboardManager = InputManager.getKeyboardManager();
+    private final MouseInput mouseManager;
+    private final KeyboardInput keyboardManager;
 
-    public InputHandler(GuiRenderer guiRenderer) {
+    public InputHandler(GuiRenderer guiRenderer, long window) {
         this.guiRenderer = guiRenderer;
+        this.mouseManager = new MouseInput();
+        this.keyboardManager = new KeyboardInput();
+
+        this.mouseManager.init(window);
+        this.keyboardManager.init(window);
     }
 
     public void processInput() {
         // Detect left mouse button press
-        if (mouseManager.isButtonDown(0)) {
-            guiRenderer.setLeftMouseButtonPressed(true);
-        } else {
-            guiRenderer.setLeftMouseButtonPressed(false);
-        }
+        guiRenderer.setLeftMouseButtonPressed(mouseManager.isButtonDown(0));
 
         // Process keyboard input
-        if (keyboardManager.getKeyDownCount() > 0) {
-            guiRenderer.setKeyDown(true);
-        } else {
-            guiRenderer.setKeyDown(false);
-        }
-        
+        guiRenderer.setKeyDown(keyboardManager.getKeyDownCount() > 0);
     }
 }
