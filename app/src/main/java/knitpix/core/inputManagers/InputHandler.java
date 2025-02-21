@@ -8,6 +8,7 @@ import knitpix.gui.GuiRenderer;
 public class InputHandler {
     private final GuiRenderer guiRenderer;
     private final MouseInput mouseManager = InputManager.getMouseManager();
+    private final KeyboardInput keyboardManager = InputManager.getKeyboardManager();
 
     public InputHandler(GuiRenderer guiRenderer) {
         this.guiRenderer = guiRenderer;
@@ -20,5 +21,13 @@ public class InputHandler {
         } else {
             guiRenderer.setLeftMouseButtonPressed(false);
         }
+
+        // Process keyboard input
+        if (keyboardManager.getKeyDownCount() > 0) {
+            guiRenderer.setKeyDown(true);
+        } else {
+            guiRenderer.setKeyDown(false);
+        }
+        
     }
 }
