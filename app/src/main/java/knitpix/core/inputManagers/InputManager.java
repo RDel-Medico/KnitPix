@@ -6,12 +6,18 @@ package knitpix.core.inputManagers;
  */
 public class InputManager {
     private static MouseInput mouseManager = new MouseInput();
+    private static KeyboardInput keyboardManager = new KeyboardInput();
 
     public static void init(long window) {
         mouseManager.init(window);
+        keyboardManager.init(window);
     }
 
     public static MouseInput getMouseManager() {
         return mouseManager;
+    }
+
+    public static KeyboardInput getKeyboardManager() {
+        return keyboardManager;
     }
 }
