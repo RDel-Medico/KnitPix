@@ -16,13 +16,14 @@ git clone https://github.com/your-username/KnitPix.git
 cd KnitPix
 ```
 - Add the original repository as an upstream remote:
-- git remote add upstream https://github.com/RDel-Medico/KnitPix.git
-
-### 3. Creating a New Branch
-- Always create a new branch from the dev branch:
 ```
-git checkout dev
-git pull upstream dev
+git remote add upstream https://github.com/RDel-Medico/KnitPix.git
+```
+### 3. Creating a New Branch
+- Always create a new branch from the main branch:
+```
+git checkout main
+git pull upstream main
 git checkout -b feature-branch-name
 ```
 - Your branch should contain only one feature or bug fix related to a single issue.
@@ -33,7 +34,7 @@ git checkout -b feature-branch-name
 - Keep your branch updated with dev:
 ```
 git fetch upstream
-git merge upstream/dev
+git merge upstream/main
 ```
 
 ### 5. Submitting a Pull Request (PR)
@@ -41,14 +42,13 @@ git merge upstream/dev
 ```
 git push origin feature-branch-name
 ```
-- Open a PR against the dev branch.
+- Open a PR against the main branch.
 - Clearly describe the changes, reference the issue number, and include screenshots if applicable.
 - A maintainer will review your PR and may request changes.
 
 ### 6. Reviewing and Merging
 - Your PR must meet code standards before merging.
-- Once approved, your changes will be merged into dev.
-- When dev reaches a stable point, it will be merged into main.
+- Once approved, your changes will be merged into main.
 
 ## Code of Conduct
 
