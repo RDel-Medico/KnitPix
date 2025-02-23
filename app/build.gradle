@@ -33,9 +33,18 @@ dependencies {
     implementation 'org.lwjgl:lwjgl-opengl:3.3.1'
     implementation 'org.lwjgl:lwjgl-stb:3.3.1'
 
-    runtimeOnly 'org.lwjgl:lwjgl:3.2.3:natives-windows'  // For Windows native libraries
-    runtimeOnly 'org.lwjgl:lwjgl-opengl:3.2.3:natives-windows'  // OpenGL
-    runtimeOnly 'org.lwjgl:lwjgl-glfw:3.2.3:natives-windows'  // GLFW
+    // Add runtime dependencies for all platforms
+    runtimeOnly 'org.lwjgl:lwjgl:3.3.1:natives-windows'
+    runtimeOnly 'org.lwjgl:lwjgl:3.3.1:natives-linux'
+    runtimeOnly 'org.lwjgl:lwjgl:3.3.1:natives-macos'
+    
+    runtimeOnly 'org.lwjgl:lwjgl-glfw:3.3.1:natives-windows'
+    runtimeOnly 'org.lwjgl:lwjgl-glfw:3.3.1:natives-linux'
+    runtimeOnly 'org.lwjgl:lwjgl-glfw:3.3.1:natives-macos'
+    
+    runtimeOnly 'org.lwjgl:lwjgl-opengl:3.3.1:natives-windows'
+    runtimeOnly 'org.lwjgl:lwjgl-opengl:3.3.1:natives-linux'
+    runtimeOnly 'org.lwjgl:lwjgl-opengl:3.3.1:natives-macos'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
